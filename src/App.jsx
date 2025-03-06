@@ -16,11 +16,17 @@ function App() {
     setBookmarks(newBookmarks);
   };
 
-  const handleMarkAsRead = (time) => {
+  const handleMarkAsRead = (time,id) => {
     // console.log("Marked as Read", time); 
 
     const newReadingTime = readingTime + time; 
     setReadingTime(newReadingTime);
+
+    // remove the blog from the blogs list 
+    console.log('remove blog with id:', id);
+    const remainingBlogs = bookmarks.filter(blog => blog.id !== id);
+
+    setBookmarks(remainingBlogs);
   }
 
 

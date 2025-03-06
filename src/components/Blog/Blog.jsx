@@ -4,6 +4,7 @@ const Blog = ({ blog, handleAddBookmark, handleMarkAsRead }) => {
   // console.log(blog);
 
   const {
+    id,
     title,
     cover,
     author,
@@ -49,7 +50,7 @@ const Blog = ({ blog, handleAddBookmark, handleMarkAsRead }) => {
       </p>
 
       <button
-        onClick={() => handleMarkAsRead(reading_time)}
+        onClick={() => handleMarkAsRead(reading_time,id)}
         className="text-purple-800 font-bold underline"
       >
         Mark as Read
